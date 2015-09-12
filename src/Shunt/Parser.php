@@ -147,9 +147,10 @@ class Parser
 
                     $len -= $argc - 1;
 
-                    for (; $argc > 0; --$argc)
+                    for (; $argc > 0; --$argc) {
                         array_unshift($argv, array_pop($this->stack)->value);
-
+                    }
+                    
                     // Push the returned results, if any, back onto the stack.
                     $this->stack[] = new Token(Token::T_NUMBER, $ctx->fn($t->value, $argv));
                     break;

@@ -107,9 +107,11 @@ class Context
 
         if (is_callable($value) && $type == 'float') {
             $this->functions[$name] = $value;
-        } elseif (is_numeric($value) && $type == 'float') {
+        } else if (is_numeric($value) && $type == 'float') {
             $this->constants[$name] = (float) $value;
-        } elseif (is_string($value) && $type == 'string') {
+        } else if (is_string($value) && $type == 'string') {
+            $this->constants[$name] = $value;
+        } else if (is_array($value)) {
             $this->constants[$name] = $value;
         } else {
             throw new Exception('function or number expected');
