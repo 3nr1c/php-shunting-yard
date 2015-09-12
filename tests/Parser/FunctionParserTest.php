@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\Parser;
+namespace Shunt\Parser;
 
-use RR\Shunt\Parser;
-use RR\Shunt\Context;
+use Shunt\Parser;
+use Shunt\Context;
 
 
 class FunctionParserTest extends \PHPUnit_Framework_TestCase
@@ -133,7 +133,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException RR\Shunt\Exception\ParseError
+     * @expectedException \Shunt\Exception\ParseError
      */
     public function testParserExceptionMissingClosingBracket()
     {
@@ -145,7 +145,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException RR\Shunt\Exception\ParseError
+     * @expectedException \Shunt\Exception\ParseError
      */
     public function testParserExceptionSurplusClosingBracket()
     {

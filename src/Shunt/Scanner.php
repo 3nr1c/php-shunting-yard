@@ -30,9 +30,9 @@
  * <http://opensource.org/licenses/mit-license.php>
  */
 
-namespace RR\Shunt;
+namespace Shunt;
 
-use RR\Shunt\Exception\SyntaxError;
+use Shunt\Exception\SyntaxError;
 
 class Scanner
 {

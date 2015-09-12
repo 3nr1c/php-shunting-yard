@@ -30,7 +30,7 @@
  * <http://opensource.org/licenses/mit-license.php>
  */
 
-namespace RR\Shunt\Exception;
+namespace Shunt\Exception;
 
 use Exception;
 

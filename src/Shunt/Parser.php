@@ -30,10 +30,10 @@
  * <http://opensource.org/licenses/mit-license.php>
  */
 
-namespace RR\Shunt;
+namespace Shunt;
 
-use RR\Shunt\Exception\RuntimeError;
-use RR\Shunt\Exception\ParseError;
+use Shunt\Exception\RuntimeError;
+use Shunt\Exception\ParseError;
 
 class Parser
 {
@@ -173,6 +173,14 @@ class Parser
         throw new RuntimeError('run-time error: too many values in the stack');
     }
 
+    /**
+     * @param $op
+     * @param $lhs
+     * @param $rhs
+     * @param Context $ctx
+     * @return float|int|null
+     * @throws RuntimeError
+     */
     protected function op($op, $lhs, $rhs, Context $ctx)
     {
         // If there is a custom operator handler function defined in the context, call it instead

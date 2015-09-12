@@ -1,9 +1,8 @@
 <?php
 
-namespace tests\Parser;
+namespace Shunt\Parser;
 
-use RR\Shunt\Parser;
-use RR\Shunt\Exception\RuntimeError;
+use Shunt\Parser;
 
 class SimpleParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -70,7 +69,7 @@ class SimpleParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \RR\Shunt\Exception\RuntimeError
+     * @expectedException \Shunt\Exception\RuntimeError
      */
     public function testDivisionFromZero()
     {
@@ -80,7 +79,7 @@ class SimpleParserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \RR\Shunt\Exception\RuntimeError
+     * @expectedException \Shunt\Exception\RuntimeError
      */
     public function testModulusFromZero()
     {

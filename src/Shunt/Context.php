@@ -30,10 +30,10 @@
  * <http://opensource.org/licenses/mit-license.php>
  */
 
-namespace RR\Shunt;
+namespace Shunt;
 
 use Exception;
-use RR\Shunt\Exception\RuntimeError;
+use Shunt\Exception\RuntimeError;
 
 class Context
 {
@@ -44,7 +44,7 @@ class Context
     /**
      * Call a user-defined custom function and returns the result
      *
-     * @param $name The name of the function
+     * @param string $name The name of the function
      * @param array $args The arguments to pass to the function
      * @return float The result returned from the function
      * @throws RuntimeError
@@ -75,9 +75,9 @@ class Context
     }
 
     /**
-     * @param $op Operator integer value (as defined in Token)
-     * @param $lhsValue The left-hand side operand
-     * @param $rhsValue The right-hand side operand
+     * @param string $op Operator integer value (as defined in Token)
+     * @param mixed $lhsValue The left-hand side operand
+     * @param mixed $rhsValue The right-hand side operand
      * @return float
      * @throws RuntimeError
      */
@@ -93,7 +93,7 @@ class Context
     /**
      * Define a custom constant or a function
      *
-     * @param $name Name of the constant or function
+     * @param string $name Name of the constant or function
      * @param mixed $value
      * @param string $type
      * @throws \Exception

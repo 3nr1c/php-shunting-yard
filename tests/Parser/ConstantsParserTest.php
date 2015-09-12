@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\Parser;
+namespace Shunt\Tests\Parser;
 
-use RR\Shunt\Context;
-use RR\Shunt\Parser;
+use Shunt\Context;
+use Shunt\Parser;
 
 class ConstantsParserTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +11,7 @@ class ConstantsParserTest extends \PHPUnit_Framework_TestCase
     /**
      * @param $equation
      * @param array $constants
-     *                         @param $expected
+     * @param $expected
      *
      * @dataProvider equationAndConstantsProvider
      */

@@ -1,9 +1,8 @@
 <?php
 
-namespace tests\Parser;
+namespace Shunt\Parser;
 
-use RR\Shunt\Parser;
-use RR\Shunt\Exception\RuntimeError;
+use Shunt\Parser;
 
 class FailingParenthesisParserTest extends \PHPUnit_Framework_TestCase
 {

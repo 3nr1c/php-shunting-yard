@@ -1,9 +1,8 @@
 <?php
 
-namespace tests\Context;
+namespace Shunt\Context;
 
-use RR\Shunt\Context;
-use RR\Shunt\Exception\RuntimeError;
+use Shunt\Context;
 use Exception;
 
 class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
@@ -46,7 +45,7 @@ class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \RR\Shunt\Exception\RuntimeError
+     * @expectedException \Shunt\Exception\RuntimeError
      */
     public function testCallNotsetFunctionCausesException()
     {

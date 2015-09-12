@@ -1,13 +1,16 @@
 {
-    "name": "andig/php-shunting-yard",
+    "name": "3nr1c/php-shunting-yard",
     "type": "library",
     "keywords": ["math","shunting yard", "equation"],
-    "homepage": "https://github.com/andig/php-shunting-yard",
-    "description": "Refactored repack of https://github.com/andig/php-shunting-yard",
+    "homepage": "https://github.com/3nr1c/php-shunting-yard",
+    "description": "php-shunting-yard",
     "license": "MIT",
     "autoload": {
-        "psr-0": {
-            "RR\\": "src/"
+        "psr-4": {
+            "Shunt\\": "src/Shunt/",
+            "Shunt\\Tests\\": "tests/",
+            "Shunt\\Tests\\Parser\\": "tests/Parser/",
+            "Shunt\\Tests\\Context\\": "tests/Context/"
         }
     },
     "require": {

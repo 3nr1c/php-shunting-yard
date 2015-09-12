@@ -1,10 +1,9 @@
 <?php
 
-namespace tests;
+namespace Shunt\Tests;
 
-use RR\Shunt\Scanner;
-use RR\Shunt\Token;
-use RR\Shunt\Exception\SyntaxError;
+use Shunt\Scanner;
+use Shunt\Token;
 
 class ScannerTest extends \PHPUnit_Framework_TestCase
 {
@@ -347,7 +346,7 @@ class ScannerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \RR\Shunt\Exception\SyntaxError
+     * @expectedException \Shunt\Exception\SyntaxError
      */
     public function testForSyntaxErrorExceptionWithWrongInput()
     {
