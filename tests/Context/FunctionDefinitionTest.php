@@ -12,7 +12,7 @@ class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
     {
         $context = new Context();
 
-        $context->def('func', function ($param1) {
+        $context->defFunction('func', function ($param1) {
             return $param1;
         });
 
@@ -26,7 +26,7 @@ class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
     {
         $context = new Context();
 
-        $context->def('abs');
+        $context->defFunction('abs');
 
         $actual = $context->fn('abs', array(-3));
 
@@ -41,7 +41,7 @@ class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
     {
         $context = new Context();
 
-        $context->def('abs', 'Just a String That Causes Error #$#$%#@');
+        $context->defFunction('abs', 'Just a String That Causes Error #$#$%#@');
     }
 
     /**
@@ -58,7 +58,7 @@ class FunctionDefinitionTest extends \PHPUnit_Framework_TestCase
     {
         $context = new Context();
 
-        $context->def('func', function ($param1, $param2 = 100) {
+        $context->defFunction('func', function ($param1, $param2 = 100) {
                 return ($param1 + $param2);
             });
 

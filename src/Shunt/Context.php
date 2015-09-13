@@ -100,21 +100,26 @@ class Context
      */
     public function def($name, $value = null, $type = 'float')
     {
-        // wrapper for simple PHP functions
-        if ($value === null) {
-            $value = $name;
-        }
-
-        if (is_callable($value) && $type == 'float') {
-            $this->functions[$name] = $value;
-        } else if (is_numeric($value) && $type == 'float') {
+        if (is_numeric($value) && $type == 'float') {
             $this->constants[$name] = (float) $value;
         } else if (is_string($value) && $type == 'string') {
             $this->constants[$name] = $value;
         } else if (is_array($value)) {
             $this->constants[$name] = $value;
         } else {
-            throw new Exception('function or number expected');
+            throw new Exception('array, number or string expected');
+        }
+    }
+
+    public function defFunction($name, $callback = null) {
+        if ($callback === null) {
+            $callback = $name;
+        }
+
+        if (is_callable($callback)) {
+            $this->functions[$name] = $callback;
+        } else {
+            throw new Exception('function expected');
         }
     }
 

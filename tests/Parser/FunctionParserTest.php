@@ -12,7 +12,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testFunctionCallWithOneParam()
     {
         $context = new Context();
-        $context->def(
+        $context->defFunction(
             'myfunc',
             function ($param1) {
                 return $param1;
@@ -29,7 +29,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testFunctionCallWithoutParam()
     {
         $context = new Context();
-        $context->def(
+        $context->defFunction(
             'myfunc',
             function () {
                 return 1;
@@ -46,7 +46,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testFunctionCallWithTwoParams()
     {
         $context = new Context();
-        $context->def(
+        $context->defFunction(
             'myfunc',
             function ($param1, $param2) {
                 return ($param1 + $param2);
@@ -69,7 +69,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testFunctionCallWithDefaultParamValue()
     {
         $context = new Context();
-        $context->def(
+        $context->defFunction(
             'myfunc',
             function ($param1, $param2 = 33) {
                 return ($param1 + $param2);
@@ -92,7 +92,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testWrapPHPFunction()
     {
         $context = new Context();
-        $context->def('abs');
+        $context->defFunction('abs');
 
         $equation = 'abs(100)';
         $actual = Parser::parse($equation, $context);
@@ -110,7 +110,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testWrapPHPFunctionWithoutParam()
     {
         $context = new Context();
-        $context->def('pi');
+        $context->defFunction('pi');
 
         $equation = 'pi()';
         $actual = Parser::parse($equation, $context);
@@ -122,8 +122,8 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testWrapPHPFunctionWithoutParamNested()
     {
         $context = new Context();
-        $context->def('pi');
-        $context->def('min');
+        $context->defFunction('pi');
+        $context->defFunction('min');
 
         $equation = 'min(pi(),0)';
         $actual = Parser::parse($equation, $context);
@@ -138,7 +138,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testParserExceptionMissingClosingBracket()
     {
         $context = new Context();
-        $context->def('pi');
+        $context->defFunction('pi');
 
         $equation = 'pi(';
         $actual = Parser::parse($equation, $context);
@@ -150,7 +150,7 @@ class FunctionParserTest extends \PHPUnit_Framework_TestCase
     public function testParserExceptionSurplusClosingBracket()
     {
         $context = new Context();
-        $context->def('pi');
+        $context->defFunction('pi');
 
         $equation = 'pi())';
         $actual = Parser::parse($equation, $context);
